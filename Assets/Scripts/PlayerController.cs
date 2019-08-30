@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController instance;
     public float speed;
     public float jumpForce;
     float horizontalVelocity;
@@ -14,6 +16,10 @@ public class PlayerController : MonoBehaviour
     public float boxColliderX;
     bool isFlipped = false;
     public Animator anim;
+
+    public void Awake(){
+        instance = this;
+    }
 
     void Start(){
         boxCollider = gameObject.GetComponent<BoxCollider2D>();
@@ -28,6 +34,10 @@ public class PlayerController : MonoBehaviour
 
         if(Input.GetButtonDown("Flip") && isGrounded){
             Flip();
+        }
+
+        if(Input.GetButtonDown("Restart")){
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 
