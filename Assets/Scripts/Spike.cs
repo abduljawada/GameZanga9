@@ -10,6 +10,9 @@ public class Spike : MonoBehaviour
         manager = Manager.instance;
     }
     void OnTriggerEnter2D(Collider2D other){
-        manager.StartCoroutine("Die");
+        if(other.tag == "Player"){
+            manager.Restart();
+        }
+        
     }
 }

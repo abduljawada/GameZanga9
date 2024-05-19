@@ -7,12 +7,18 @@ public class Manager : MonoBehaviour
 {
     public static Manager instance;
     public Vector2 targetResolution;
-    public float slowMotionSpeed;
-    public float timeToReload;
-    int currentSceneIndex = 2;
+    int currentSceneIndex;
 
     void Awake(){
-        instance = this;
+        if (instance != null && instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
     }
     void Start(){
         Camera camera = GetComponent<Camera>();
@@ -26,30 +32,28 @@ public class Manager : MonoBehaviour
         }
     }
 
-    public IEnumerator Die(){
-        PlayerController player = PlayerController.instance;
-        Time.timeScale = slowMotionSpeed;
-        Destroy(player.gameObject);
-        //Instantiate(Particals)
-        yield return new WaitForSeconds(timeToReload);
-        Time.timeScale = 1f;
+    public void Restart(){
         SceneManager.LoadScene(currentSceneIndex);
         SceneManager.LoadScene(1, LoadSceneMode.Additive);
-
     }
 
     public void LoadNextScene(){
         Time.timeScale = 1f;
         int nextSceneIndex = currentSceneIndex + 1;
-        if(nextSceneIndex < SceneManager.sceneCount){
+        if(currentSceneIndex == 0){
+            SceneManager.LoadScene(2);
+            currentSceneIndex = 2;
+            SceneManager.LoadScene(1, LoadSceneMode.Additive);
+        }
+        else if(nextSceneIndex < SceneManager.sceneCountInBuildSettings){
             SceneManager.LoadScene(nextSceneIndex);
             currentSceneIndex = nextSceneIndex;
             SceneManager.LoadScene(1, LoadSceneMode.Additive);
         }
         else
         {
-            SceneManager.LoadScene(0);
             currentSceneIndex = 0;
+            SceneManager.LoadScene(0);
         }
     }
 }

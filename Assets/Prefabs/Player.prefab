@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 7608217549357242087}
   m_Layer: 8
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -168,13 +168,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 300
-  jumpForce: 450
+  jumpForce: 545
   whatIsGround:
     serializedVersion: 2
     m_Bits: 55
   rb: {fileID: 7608217549357242082}
-  boxColliderX: 0.1
+  boxColliderX: 0.3
   anim: {fileID: 7608217549357242087}
+  rbs:
+  - {fileID: 7608217549357242082}
+  offset: {x: 0, y: -0.5, z: 0}
 --- !u!61 &7608217549357242083
 BoxCollider2D:
   m_ObjectHideFlags: 0

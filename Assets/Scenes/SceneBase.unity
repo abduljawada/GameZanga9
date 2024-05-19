@@ -363,7 +363,7 @@ PrefabInstance:
     - target: {fileID: 7400281872228763749, guid: b1f122e3d3ac30641a954ae8ec25623e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 19.841
+      value: 19.9531
       objectReference: {fileID: 0}
     - target: {fileID: 7400281872228763749, guid: b1f122e3d3ac30641a954ae8ec25623e,
         type: 3}
@@ -418,7 +418,7 @@ PrefabInstance:
     - target: {fileID: 7400281872228763749, guid: b1f122e3d3ac30641a954ae8ec25623e,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 8.084971
+      value: 7.8610177
       objectReference: {fileID: 0}
     - target: {fileID: 7400281872228763749, guid: b1f122e3d3ac30641a954ae8ec25623e,
         type: 3}
@@ -442,7 +442,7 @@ PrefabInstance:
     - target: {fileID: 7400281872228763749, guid: b1f122e3d3ac30641a954ae8ec25623e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -19.773
+      value: -19.8755
       objectReference: {fileID: 0}
     - target: {fileID: 7400281872228763749, guid: b1f122e3d3ac30641a954ae8ec25623e,
         type: 3}
@@ -497,7 +497,7 @@ PrefabInstance:
     - target: {fileID: 7400281872228763749, guid: b1f122e3d3ac30641a954ae8ec25623e,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 7.949828
+      value: 7.744723
       objectReference: {fileID: 0}
     - target: {fileID: 7400281872228763749, guid: b1f122e3d3ac30641a954ae8ec25623e,
         type: 3}
@@ -516,6 +516,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1775690403}
   - component: {fileID: 1775690402}
+  - component: {fileID: 1775690404}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -587,6 +588,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1775690404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775690401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9985cfcf24fed9b43abe4c8ff71195d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2047121407
 GameObject:
   m_ObjectHideFlags: 0
@@ -723,6 +736,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6336499070714987192, guid: eab6b20e49ee57242bbbbddffb876a7a,
+        type: 3}
+      propertyPath: currentSceneIndex
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eab6b20e49ee57242bbbbddffb876a7a, type: 3}
